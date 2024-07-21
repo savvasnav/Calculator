@@ -12,7 +12,7 @@ public class Main {
 
 }
 class Calculator extends JFrame implements ActionListener {
-    JButton[][] button = new JButton[4][4];
+    JButton[][] button = new JButton[5][5];
     private JTextField display;
     private String currentOperator;
     private double firstNumber ;
@@ -33,7 +33,7 @@ class Calculator extends JFrame implements ActionListener {
 
         //add(display, BorderLayout.NORTH);
         JPanel jpanel = new JPanel();
-        jpanel.setLayout(new GridLayout(4,4));
+        jpanel.setLayout(new GridLayout(5,5));
         add(jpanel, BorderLayout.CENTER);
         initializeButtons(jpanel);
     }
@@ -86,8 +86,8 @@ class Calculator extends JFrame implements ActionListener {
         }
     }
     private void initializeButtons(JPanel jpanel){
-        for (int row = 0;row<4;row++){
-            for(int col = 0;col <4;col++){
+        for (int row = 0;row<5;row++){
+            for(int col = 0;col <5;col++){
                 button [row][col] = new JButton("");
                 button [row][col].setFont(new Font("Arial",Font.PLAIN,40));
                 button [row][col].setBackground(Color.lightGray);
@@ -107,8 +107,9 @@ class Calculator extends JFrame implements ActionListener {
         }
                 button[0][3].setText("+");
                 button[1][3].setText("-");
-                button[2][3].setText("/");
-                button[3][3].setText("=");
+                button[2][3].setText("*");
+                button[3][3].setText("/");
+                button[4][3].setText("=");
                 button[3][0].setText("0");
                 button[3][1].setText(".");
                 button[3][2].setText("C");
